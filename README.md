@@ -1,44 +1,54 @@
-# 📘 Docs Portal – Multi-Language Documentation Platform
+🧾 Docs Portal – Multi-Language Documentation Platform
 
-A high-performance, multi-language documentation portal built with **Next.js**, featuring **Incremental Static Regeneration (ISR)**, **internationalization**, **versioned documentation**, **full-text search**, **API reference using Swagger UI**, **dark/light theme**, and **Dockerized deployment**.
+Docs Portal is a high-performance, multi-language documentation system built with Next.js. It delivers a modern documentation experience using Incremental Static Regeneration (ISR), internationalization (i18n), versioned documentation, client-side search, Swagger-powered API references, theme switching, and full Docker support.
 
-This project demonstrates modern documentation architecture commonly used in real-world product documentation and knowledge bases.
+This project demonstrates how production-grade documentation portals are built for technical products, developer platforms, and enterprise knowledge bases.
 
----
+🚀 Core Features
 
-## 🚀 Features
+📄 Markdown-based documentation for easy content authoring
 
-- 📄 **Markdown-based documentation system**
-- 🔁 **Incremental Static Regeneration (ISR)** with 60s revalidation
-- 🌍 **Internationalization (i18n)**
-  - English (en)
-  - Spanish (es)
-  - French (fr)
-  - German (de)
-- 🔀 **Versioned documentation** (v1, v2, v3)
-- 🔍 **Client-side full-text search**
-- 📑 **Auto-generated Table of Contents (TOC)** with active section tracking
-- 📘 **API Reference** rendered using Swagger UI
-- 🌙 **Light / Dark theme toggle**
-- 💬 **Feedback widget** on each documentation page
-- 🐳 **Fully containerized** with Docker & Docker Compose
+🔁 ISR-powered static pages with 60-second revalidation
 
----
+🌍 Built-in internationalization (i18n) supporting:
 
-## 🛠️ Tech Stack
+English (en)
 
-- **Framework:** Next.js (App Router)
-- **Styling:** Tailwind CSS + CSS Variables
-- **Markdown Processing:** remark, remark-html, remark-slug
-- **Search:** FlexSearch
-- **API Docs:** swagger-ui-react
-- **Containerization:** Docker, Docker Compose
+Spanish (es)
 
----
+French (fr)
 
-## 📂 Project Structure
+German (de)
 
-```
+🔀 Multiple documentation versions (v1, v2, v3)
+
+🔍 Fast client-side full-text search
+
+📑 Auto-generated Table of Contents (TOC) with active section highlighting
+
+📘 API documentation rendered using Swagger UI
+
+🌙 Light & Dark theme support
+
+💬 Page-level feedback widget
+
+🐳 Fully dockerized setup with Docker Compose
+
+🛠️ Tech Stack
+
+Framework: Next.js (App Router)
+
+Styling: Tailwind CSS with CSS variables
+
+Markdown Processing: remark, remark-html, remark-slug
+
+Search: FlexSearch
+
+API Docs: swagger-ui-react
+
+Containerization: Docker & Docker Compose
+
+📂 Project Structure
 .
 ├── app/
 │   ├── [lang]/docs/[version]/[slug]/page.tsx
@@ -64,139 +74,110 @@ This project demonstrates modern documentation architecture commonly used in rea
 ├── .env.example
 ├── tailwind.config.ts
 └── README.md
-```
 
----
+🧪 Environment Variables
 
-## 🧪 Environment Variables
-
-All required environment variables are documented in **`.env.example`**.
+All required environment variables are documented in .env.example.
 
 Example:
 
-```env
 # Application environment
 NODE_ENV=development
 
-# Next.js public variables
+# Public Next.js variables
 NEXT_PUBLIC_SITE_NAME=Docs Portal
-```
 
-> ⚠️ **Do not commit real secrets.**  
-> Only example or placeholder values should be included.
 
----
+⚠️ Security Note:
+Never commit real secrets. Only use sample or placeholder values in .env.example.
 
-## 🐳 Docker Setup (Required)
+🐳 Running with Docker
 
 The application is fully containerized and can be started using Docker Compose.
 
-### 🔧 Prerequisites
+🔧 Prerequisites
 
-- [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
+Docker
 
-### ▶️ Run the Application
+Docker Compose
+
+▶️ Start the application
 
 From the project root:
 
-```bash
 docker-compose up --build
-```
 
-The application will be available at:
 
-```
+Once the containers are running, open:
+
 http://localhost:3000
-```
 
-Docker health checks ensure the app is running correctly before marking the container as healthy.
 
----
+Health checks ensure the container is marked healthy only after the app responds correctly.
 
-## 🔍 API Reference
+🔍 API Reference
 
-The API documentation is available at:
+API documentation is available at:
 
-```
 /api-reference
-```
 
-It is rendered using **Swagger UI** from the OpenAPI specification located at:
 
-```
+Swagger UI renders the OpenAPI specification from:
+
 public/openapi.json
-```
 
----
+🌍 Localization & Routing
 
-## 🌍 Internationalized Routes
+Example localized documentation routes:
 
-Examples:
+/en/docs/v1/introduction
 
-- `/en/docs/v1/introduction`
-- `/es/docs/v2/introduction`
-- `/fr/docs/v3/introduction`
-- `/de/docs/v1/introduction`
+/es/docs/v2/introduction
 
-Language and version can be switched using the UI controls.
+/fr/docs/v3/introduction
 
----
+/de/docs/v1/introduction
 
-## 📑 Incremental Static Regeneration (ISR)
+Users can switch both language and documentation version directly from the UI.
 
-- All documentation pages are **statically generated**
-- Pages are **revalidated every 60 seconds**
-- Ensures **fast performance** with **fresh content**
+📑 Incremental Static Regeneration (ISR)
 
----
+All documentation pages are pre-rendered statically
 
-## 💬 Feedback Widget
+Pages are revalidated every 60 seconds
 
-Each documentation page includes a feedback form where users can submit feedback.  
-No backend is required; submission confirmation is handled client-side.
+Combines fast performance with up-to-date content
 
----
+💬 Feedback System
 
-## 📦 Installation & Development
+Each documentation page includes a lightweight feedback component.
+User responses are handled entirely on the client—no backend services required.
 
-If you want to run the project locally without Docker:
-
-### 1. Clone the repository
-
-```bash
+📦 Local Development (Without Docker)
+1️⃣ Clone the repository
 git clone <repository-url>
 cd docs-portal
-```
 
-### 2. Install dependencies
-
-```bash
+2️⃣ Install dependencies
 npm install
 # or
 yarn install
 # or
 pnpm install
-```
 
-### 3. Run the development server
-
-```bash
+3️⃣ Run the development server
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
 
----
+Open http://localhost:3000 in your browser.
 
-## 🏗️ Build for Production
-
-```bash
+🏗️ Production Build
 npm run build
 npm run start
-```
----
+
+
+This creates an optimized production build and serves it efficiently.
